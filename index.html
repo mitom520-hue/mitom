@@ -1,7 +1,660 @@
 <!DOCTYPE html>
-<html lang='zh-TW'>
-<head><meta charset='UTF-8'><title>k123github網站1.4</title></head>
-<body style='font-family:sans-serif; text-align:center; padding:50px;'>
-<h1>歡迎使用 k123github網站1.4 部署的網站！</h1>
-<p>專題資料夾已順利上傳至 GitHub Pages。</p>
-</body></html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="育華國小 三年甲班 教學網站 —— 課表、公告、作業、活動與班級資訊，讓家長與同學快速掌握班級動態。">
+<meta name="theme-color" content="#2563eb">
+<meta name="keywords" content="育華國小,三年甲班,教學網站,班級網站,課表,作業">
+<meta property="og:title" content="育華國小 三年甲班 教學網站">
+<meta property="og:description" content="育華國小三年甲班專屬教學網站，隨時查看課表、公告與作業。">
+<meta property="og:type" content="website">
+<title>育華國小 三年甲班｜教學網站</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Baloo+2:wght@600;800&display=swap">
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳至主要內容</a>
+
+<!-- ══════════════ 頂部資訊列 ══════════════ -->
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <span class="topbar__item"><i class="fa-solid fa-school"></i> 育華國小　三年甲班</span>
+    <span class="topbar__sep"></span>
+    <span class="topbar__item"><i class="fa-solid fa-calendar-days"></i> <span id="schoolYear">115 學年度上學期</span></span>
+    <span class="topbar__sep"></span>
+    <span class="topbar__item"><i class="fa-regular fa-clock"></i> 星期 <span id="todayText">一</span>　<span id="todayDate">—</span></span>
+    <span class="topbar__spacer"></span>
+    <span class="topbar__item topbar__item--tel"><i class="fa-solid fa-phone"></i> 緊急聯絡：(02) 2345-6789</span>
+  </div>
+</div>
+
+<!-- ══════════════ 導覽列 ══════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#home">
+      <span class="brand__mark"><i class="fa-solid fa-graduation-cap"></i></span>
+      <span class="brand__text">
+        <strong>育華國小</strong>
+        <small>三年甲班 教學網站</small>
+      </span>
+    </a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="主要選單">
+      <a href="#home" class="nav__link is-active">首頁</a>
+      <a href="#schedule" class="nav__link">本週課表</a>
+      <a href="#news" class="nav__link">最新公告</a>
+      <a href="#homework" class="nav__link">每日作業</a>
+      <a href="#activity" class="nav__link">活動行事</a>
+      <a href="#honor" class="nav__link">榮譽榜</a>
+      <a href="#works" class="nav__link">學生作品</a>
+      <a href="#contact" class="nav__link">聯絡我們</a>
+      <a href="#qrcode" class="nav__link nav__link--accent">班級 QR Code</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false" aria-controls="navMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ══════════════ 主視覺 ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero__blob hero__blob--1"></div>
+  <div class="hero__blob hero__blob--2"></div>
+  <div class="hero__blob hero__blob--3"></div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__copy reveal">
+      <p class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> 歡迎回到三年甲班</p>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">育華國小 <span class="hero__title-accent">三年甲班</span></span>
+        <span class="hero__title-line">教學網站</span>
+      </h1>
+
+      <p class="hero__desc">
+        這裡是 <strong>育華國小三年甲班</strong> 的專屬班級網站。老師會在這裡發布
+        <em>課表、公告、作業與活動訊息</em>，家長與同學隨時都能掌握班級最新動態，
+        一起讓每一天的學習都更有方向。
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#schedule"><i class="fa-solid fa-table-columns"></i> 查看本週課表</a>
+        <a class="btn btn--ghost" href="#qrcode"><i class="fa-solid fa-qrcode"></i> 掃碼加入班級群</a>
+      </div>
+
+      <ul class="hero__stats">
+        <li class="stat">
+          <span class="stat__icon stat__icon--blue"><i class="fa-solid fa-users"></i></span>
+          <span class="stat__num" data-count="28">0</span>
+          <span class="stat__label">班級人數</span>
+        </li>
+        <li class="stat">
+          <span class="stat__icon stat__icon--green"><i class="fa-solid fa-chalkboard-user"></i></span>
+          <span class="stat__num">1</span>
+          <span class="stat__label">位導師</span>
+        </li>
+        <li class="stat">
+          <span class="stat__icon stat__icon--amber"><i class="fa-solid fa-clock"></i></span>
+          <span class="stat__num">40</span>
+          <span class="stat__label">每週節數</span>
+        </li>
+        <li class="stat">
+          <span class="stat__icon stat__icon--pink"><i class="fa-solid fa-calendar-check"></i></span>
+          <span class="stat__num" id="schoolDay">—</span>
+          <span class="stat__label">開學日</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ★ QR Code：固定以 450 × 450 顯示 ★ -->
+    <div class="hero__side reveal" id="qrcode">
+      <div class="qr-card">
+        <div class="qr-card__head">
+          <span class="qr-card__icon"><i class="fa-solid fa-qrcode"></i></span>
+          <div>
+            <h2 class="qr-card__title">掃碼進入班級網站</h2>
+            <p class="qr-card__sub">QR Code · 450 × 450 px</p>
+          </div>
+        </div>
+
+        <div class="qr-card__body">
+          <div class="qr-frame" id="qrFrame" aria-busy="true">
+            <span class="qr-frame__loading"><i class="fa-solid fa-spinner fa-spin"></i> 產生中…</span>
+          </div>
+          <p class="qr-card__tip">
+            <i class="fa-solid fa-mobile-screen"></i>
+            使用手機相機掃描，即可加入
+            <strong>三年甲班 LINE 群組</strong> 與線上表單。
+          </p>
+        </div>
+
+        <div class="qr-card__foot">
+          <button class="btn btn--sm btn--soft" id="qrDownload" type="button">
+            <i class="fa-solid fa-download"></i> 下載 QR Code
+          </button>
+          <button class="btn btn--sm btn--soft" id="qrCopy" type="button">
+            <i class="fa-regular fa-copy"></i> 複製網址
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 快速連結 ══════════════ -->
+<section class="section section--tight" id="quick">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-compass"></i> Quick Links</p>
+      <h2 class="section__title">快速前往</h2>
+      <p class="section__lead">常用資料一點即達，減少家長與同學的搜尋時間。</p>
+    </div>
+
+    <div class="grid grid--6 quick-grid">
+      <a class="quick-card reveal" href="#schedule" style="--d:0ms">
+        <span class="quick-card__icon" style="--c:#2563eb;--c-soft:#dbeafe"><i class="fa-solid fa-table-columns"></i></span>
+        <h3>本週課表</h3>
+        <p>每週各節課的安排</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+      <a class="quick-card reveal" href="#homework" style="--d:60ms">
+        <span class="quick-card__icon" style="--c:#f59e0b;--c-soft:#fef3c7"><i class="fa-solid fa-book-open"></i></span>
+        <h3>每日作業</h3>
+        <p>各科回家作業與提醒</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+      <a class="quick-card reveal" href="#news" style="--d:120ms">
+        <span class="quick-card__icon" style="--c:#ef4444;--c-soft:#fee2e2"><i class="fa-solid fa-bullhorn"></i></span>
+        <h3>最新公告</h3>
+        <p>重要訊息與學校公告</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+      <a class="quick-card reveal" href="#activity" style="--d:180ms">
+        <span class="quick-card__icon" style="--c:#10b981;--c-soft:#d1fae5"><i class="fa-solid fa-calendar-days"></i></span>
+        <h3>活動行事</h3>
+        <p>近期校慶與班級活動</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+      <a class="quick-card reveal" href="#honor" style="--d:240ms">
+        <span class="quick-card__icon" style="--c:#8b5cf6;--c-soft:#ede9fe"><i class="fa-solid fa-award"></i></span>
+        <h3>榮譽榜</h3>
+        <p>模範生與學習之星</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+      <a class="quick-card reveal" href="#contact" style="--d:300ms">
+        <span class="quick-card__icon" style="--c:#0ea5e9;--c-soft:#e0f2fe"><i class="fa-solid fa-comments"></i></span>
+        <h3>聯絡我們</h3>
+        <p>導師與學校的聯絡方式</p>
+        <i class="fa-solid fa-arrow-right quick-card__go"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 本週課表 ══════════════ -->
+<section class="section" id="schedule">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-calendar-week"></i> Schedule</p>
+      <h2 class="section__title">本週課表</h2>
+      <p class="section__lead">三年甲班 · 每週 40 節　｜　時間：08:00 起，第七節 14:20 下課</p>
+    </div>
+
+    <div class="card card--table reveal">
+      <div class="card__toolbar">
+        <div class="seg" role="group" aria-label="切換課表">
+          <button class="seg__btn is-active" type="button" data-week="now">本週</button>
+          <button class="seg__btn" type="button" data-week="prev">上週</button>
+        </div>
+        <span class="chip chip--soft"><i class="fa-solid fa-circle-info"></i> 最後更新：<time>2026/10/19</time></span>
+      </div>
+
+      <div class="table-scroll">
+        <table class="timetable">
+          <caption class="sr-only">三年甲班本週課表</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="tt-head tt-head--period">節次</th>
+              <th scope="col">星期一</th>
+              <th scope="col">星期二</th>
+              <th scope="col">星期三</th>
+              <th scope="col">星期四</th>
+              <th scope="col">星期五</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 1 節</th>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--math"><i class="fa-solid fa-calculator"></i>數學</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 2 節</th>
+              <td><span class="sub sub--math"><i class="fa-solid fa-calculator"></i>數學</span></td>
+              <td><span class="sub sub--math"><i class="fa-solid fa-calculator"></i>數學</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--math"><i class="fa-solid fa-calculator"></i>數學</span></td>
+              <td><span class="sub sub--math"><i class="fa-solid fa-calculator"></i>數學</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 3 節</th>
+              <td><span class="sub sub--en"><i class="fa-solid fa-globe"></i>英語</span></td>
+              <td><span class="sub sub--en"><i class="fa-solid fa-globe"></i>英語</span></td>
+              <td><span class="sub sub--en"><i class="fa-solid fa-globe"></i>英語</span></td>
+              <td><span class="sub sub--en"><i class="fa-solid fa-globe"></i>英語</span></td>
+              <td><span class="sub sub--en"><i class="fa-solid fa-globe"></i>英語</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 4 節</th>
+              <td><span class="sub sub--sci"><i class="fa-solid fa-flask"></i>自然</span></td>
+              <td><span class="sub sub--soc"><i class="fa-solid fa-earth-asia"></i>社會</span></td>
+              <td><span class="sub sub--soc"><i class="fa-solid fa-earth-asia"></i>社會</span></td>
+              <td><span class="sub sub--sci"><i class="fa-solid fa-flask"></i>自然</span></td>
+              <td><span class="sub sub--sci"><i class="fa-solid fa-flask"></i>自然</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 5 節</th>
+              <td><span class="sub sub--soc"><i class="fa-solid fa-earth-asia"></i>社會</span></td>
+              <td><span class="sub sub--sci"><i class="fa-solid fa-flask"></i>自然</span></td>
+              <td><span class="sub sub--health"><i class="fa-solid fa-heart-pulse"></i>健康</span></td>
+              <td><span class="sub sub--soc"><i class="fa-solid fa-earth-asia"></i>社會</span></td>
+              <td><span class="sub sub--soc"><i class="fa-solid fa-earth-asia"></i>社會</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 6 節</th>
+              <td><span class="sub sub--art"><i class="fa-solid fa-music"></i>音樂</span></td>
+              <td><span class="sub sub--pe"><i class="fa-solid fa-dumbbell"></i>體育</span></td>
+              <td><span class="sub sub--art"><i class="fa-solid fa-palette"></i>美術</span></td>
+              <td><span class="sub sub--it"><i class="fa-solid fa-laptop-code"></i>資訊</span></td>
+              <td><span class="sub sub--art"><i class="fa-solid fa-music"></i>音樂</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 7 節</th>
+              <td><span class="sub sub--art"><i class="fa-solid fa-palette"></i>美術</span></td>
+              <td><span class="sub sub--it"><i class="fa-solid fa-laptop-code"></i>資訊</span></td>
+              <td><span class="sub sub--art"><i class="fa-solid fa-music"></i>音樂</span></td>
+              <td><span class="sub sub--pe"><i class="fa-solid fa-dumbbell"></i>體育</span></td>
+              <td><span class="sub sub--art"><i class="fa-solid fa-palette"></i>美術</span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="tt-head tt-head--period">第 8 節</th>
+              <td><span class="sub sub--cls"><i class="fa-solid fa-users"></i>班級活動</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--club"><i class="fa-solid fa-futbol"></i>社團</span></td>
+              <td><span class="sub sub--ch"><i class="fa-solid fa-book"></i>國語</span></td>
+              <td><span class="sub sub--cls"><i class="fa-solid fa-users"></i>班級活動</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="legend">
+        <li><span class="legend__dot" style="--c:#2563eb"></span>國語</li>
+        <li><span class="legend__dot" style="--c:#0ea5e9"></span>數學</li>
+        <li><span class="legend__dot" style="--c:#8b5cf6"></span>英語</li>
+        <li><span class="legend__dot" style="--c:#10b981"></span>自然</li>
+        <li><span class="legend__dot" style="--c:#f59e0b"></span>社會</li>
+        <li><span class="legend__dot" style="--c:#ec4899"></span>藝術 / 音樂</li>
+        <li><span class="legend__dot" style="--c:#ef4444"></span>體育 / 健康</li>
+        <li><span class="legend__dot" style="--c:#64748b"></span>其他</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 公告 + 作業 ══════════════ -->
+<section class="section section--alt" id="news">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-bullhorn"></i> News</p>
+      <h2 class="section__title">最新公告</h2>
+      <p class="section__lead">班級與學校的即時消息，重要資訊請留意加註「重要」標示者。</p>
+    </div>
+
+    <div class="grid grid--2 col-2">
+      <!-- 公告列表 -->
+      <div class="stack reveal">
+        <article class="post post--important">
+          <div class="post__date"><strong>21</strong><span>10月</span></div>
+          <div class="post__body">
+            <span class="tag tag--red"><i class="fa-solid fa-circle-exclamation"></i> 重要</span>
+            <h3 class="post__title">校內閱讀學習成果發表週</h3>
+            <p class="post__text">本週為「閱讀學習成果發表週」，各班需於星期五完成說明與海報布置，請同學帶齊個人閱讀護照。</p>
+            <p class="post__meta"><i class="fa-regular fa-user"></i> 李美玲老師　<i class="fa-regular fa-clock"></i> 2026/10/21 08:10</p>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post__date"><strong>17</strong><span>10月</span></div>
+          <div class="post__body">
+            <span class="tag tag--blue"><i class="fa-solid fa-flag"></i> 活動</span>
+            <h3 class="post__title">校內運動會（三）甲班加油</h3>
+            <p class="post__text">10 月 22 日（星期四）舉辦校內運動會，請穿著體育服、帶水壺與毛巾，7:30 於操場集合。</p>
+            <p class="post__meta"><i class="fa-regular fa-user"></i> 體育組　<i class="fa-regular fa-clock"></i> 2026/10/17 15:40</p>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post__date"><strong>15</strong><span>10月</span></div>
+          <div class="post__body">
+            <span class="tag tag--green"><i class="fa-solid fa-comment-dots"></i> 提醒</span>
+            <h3 class="post__title">家長親師會暨學習成果座談會</h3>
+            <p class="post__text">11 月 7 日（六）上午 9:00 於本校會議室舉行，敬請家長踴躍出席，無法出席者請提前告知。</p>
+            <p class="post__meta"><i class="fa-regular fa-user"></i> 班級導師　<i class="fa-regular fa-clock"></i> 2026/10/15 09:30</p>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post__date"><strong>13</strong><span>10月</span></div>
+          <div class="post__body">
+            <span class="tag tag--amber"><i class="fa-solid fa-box-open"></i> 通知</span>
+            <h3 class="post__title">自然科戶外教學（植物園）</h3>
+            <p class="post__text">10 月 28 日將前往植物園戶外教學，請填寫同意書，並準備水壺、遮陽帽與防蟲用品。</p>
+            <p class="post__meta"><i class="fa-regular fa-user"></i> 自然科教學　<i class="fa-regular fa-clock"></i> 2026/10/13 11:05</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- 作業 -->
+      <div class="stack" id="homework">
+        <div class="card reveal">
+          <div class="card__toolbar card__toolbar--tight">
+            <h3 class="card__title"><i class="fa-solid fa-book-open"></i> 今日回家作業</h3>
+            <span class="chip chip--soft" id="hwDate">10/21</span>
+          </div>
+
+          <ul class="hw-list">
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#2563eb;--c-soft:#dbeafe"><i class="fa-solid fa-book"></i></span>
+              <div class="hw-item__body">
+                <strong>國語</strong>
+                <p>國語作業本 P.12－P.13　｜　生字每字寫 2 遍並造句</p>
+              </div>
+              <span class="chip chip--blue">國</span>
+            </li>
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#0ea5e9;--c-soft:#e0f2fe"><i class="fa-solid fa-calculator"></i></span>
+              <div class="hw-item__body">
+                <strong>數學</strong>
+                <p>數學課本 P.28　｜　乘法直式練習 6 題</p>
+              </div>
+              <span class="chip chip--cyan">數</span>
+            </li>
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#8b5cf6;--c-soft:#ede9fe"><i class="fa-solid fa-globe"></i></span>
+              <div class="hw-item__body">
+                <strong>英語</strong>
+                <p>單字第三課（apple / banana / cherry）　｜　跟讀 10 分鐘</p>
+              </div>
+              <span class="chip chip--violet">英</span>
+            </li>
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#10b981;--c-soft:#d1fae5"><i class="fa-solid fa-flask"></i></span>
+              <div class="hw-item__body">
+                <strong>自然</strong>
+                <p>觀察日記：記錄家中植物的生長情形（3 句話）</p>
+              </div>
+              <span class="chip chip--green">自</span>
+            </li>
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#f59e0b;--c-soft:#fef3c7"><i class="fa-solid fa-earth-asia"></i></span>
+              <div class="hw-item__body">
+                <strong>社會</strong>
+                <p>社會課本 P.16　｜　完成習題本第 2 頁</p>
+              </div>
+              <span class="chip chip--amber">社</span>
+            </li>
+            <li class="hw-item">
+              <span class="hw-item__icon" style="--c:#ec4899;--c-soft:#fce7f3"><i class="fa-solid fa-dumbbell"></i></span>
+              <div class="hw-item__body">
+                <strong>體育</strong>
+                <p>跳繩練習 100 下　｜　記錄於體育學習單</p>
+              </div>
+              <span class="chip chip--pink">體</span>
+            </li>
+          </ul>
+
+          <p class="hw-note">
+            <i class="fa-solid fa-circle-info"></i>
+            請提醒孩子於 <strong>21:00 前</strong> 完成作業並整理書包；若有困難請於 LINE 群組告知老師。
+          </p>
+        </div>
+
+        <div class="card card--soft reveal">
+          <h3 class="card__title"><i class="fa-solid fa-lightbulb"></i> 自主學習小提醒</h3>
+          <ul class="tick-list">
+            <li><i class="fa-solid fa-circle-check"></i> 每天閱讀 20 分鐘，並記錄於閱讀護照</li>
+            <li><i class="fa-solid fa-circle-check"></i> 整理個人書包與文具，帶齊明日用品</li>
+            <li><i class="fa-solid fa-circle-check"></i> 複習今天所學的單字與公式</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 活動行事 ══════════════ -->
+<section class="section" id="activity">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-calendar-days"></i> Activities</p>
+      <h2 class="section__title">近期活動行事</h2>
+      <p class="section__lead">十月至十二月的重要活動，請家長留意時間安排並預留參與。</p>
+    </div>
+
+    <ol class="timeline reveal">
+      <li class="tl-item">
+        <span class="tl-dot" style="--c:#ef4444"><i class="fa-solid fa-flag"></i></span>
+        <div class="tl-card">
+          <time class="tl-date">2026 / 10 / 22（四）</time>
+          <h3>校內運動會</h3>
+          <p>全校運動會於上午 8:00 展開，甲班安排在第二場接力賽，請為孩子加油並帶好飲水。</p>
+          <span class="chip chip--red"><i class="fa-solid fa-location-dot"></i> 校內操場</span>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot" style="--c:#10b981"><i class="fa-solid fa-flask"></i></span>
+        <div class="tl-card">
+          <time class="tl-date">2026 / 10 / 28（三）</time>
+          <h3>自然科戶外教學</h3>
+          <p>前往植物園進行戶外教學，請於前一日交回同意書，並穿著便于行走的鞋子。</p>
+          <span class="chip chip--green"><i class="fa-solid fa-location-dot"></i> 植物園</span>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot" style="--c:#2563eb"><i class="fa-solid fa-bullhorn"></i></span>
+        <div class="tl-card">
+          <time class="tl-date">2026 / 11 / 07（六）</time>
+          <h3>親師會暨學習成果座談會</h3>
+          <p>上午 9:00 於本校會議室舉行，歡迎家長與孩子一同參與班級學習規劃討論。</p>
+          <span class="chip chip--blue"><i class="fa-solid fa-location-dot"></i> 本校會議室</span>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot" style="--c:#f59e0b"><i class="fa-solid fa-school"></i></span>
+        <div class="tl-card">
+          <time class="tl-date">2026 / 11 / 21（六）</time>
+          <h3>家長參觀日</h3>
+          <p>開放校園與教室參觀，當日將安排學生學習成果發表，敬請家長撥冗參加。</p>
+          <span class="chip chip--amber"><i class="fa-solid fa-location-dot"></i> 本校各校舍</span>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot" style="--c:#8b5cf6"><i class="fa-solid fa-star"></i></span>
+        <div class="tl-card">
+          <time class="tl-date">2026 / 12 / 12（六）</time>
+          <h3>校慶暨學習成果展</h3>
+          <p>配合校慶舉辦班級成果展，甲班主題為「我的小小發明家」，歡迎蒞臨指導。</p>
+          <span class="chip chip--violet"><i class="fa-solid fa-location-dot"></i> 本校活動中心</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════ 榮譽榜 + 學生作品 ══════════════ -->
+<section class="section section--alt" id="honor">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-award"></i> Honor &amp; Works</p>
+      <h2 class="section__title">榮譽榜與學生作品</h2>
+      <p class="section__lead">表揚每一位認真努力、樂於助人的小小學習者。</p>
+    </div>
+
+    <div class="grid grid--2 col-2">
+      <div class="card reveal">
+        <div class="card__toolbar card__toolbar--tight">
+          <h3 class="card__title"><i class="fa-solid fa-trophy"></i> 本週學習之星</h3>
+          <span class="chip chip--soft">10/19－10/23</span>
+        </div>
+        <ul class="star-list">
+          <li class="star-item">
+            <span class="star-item__avatar" style="--c:#f59e0b;--c-soft:#fef3c7">王</span>
+            <div><strong>王小明</strong><p>國語朗讀表現優異，帶頭朗讀</p></div>
+            <span class="chip chip--amber">國</span>
+          </li>
+          <li class="star-item">
+            <span class="star-item__avatar" style="--c:#10b981;--c-soft:#d1fae5">李</span>
+            <div><strong>李小華</strong><p>主動協助同學整理圖書角</p></div>
+            <span class="chip chip--green">品</span>
+          </li>
+          <li class="star-item">
+            <span class="star-item__avatar" style="--c:#2563eb;--c-soft:#dbeafe">陳</span>
+            <div><strong>陳小柔</strong><p>數學直式計算全對且快速</p></div>
+            <span class="chip chip--blue">智</span>
+          </li>
+          <li class="star-item">
+            <span class="star-item__avatar" style="--c:#ec4899;--c-soft:#fce7f3">張</span>
+            <div><strong>張小晴</strong><p>自然觀察日記內容豐富</p></div>
+            <span class="chip chip--pink">勤</span>
+          </li>
+          <li class="star-item">
+            <span class="star-item__avatar" style="--c:#8b5cf6;--c-soft:#ede9fe">林</span>
+            <div><strong>林小恩</strong><p>體育跳繩紀錄刷新全班</p></div>
+            <span class="chip chip--violet">體</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="works">
+        <div class="card__toolbar card__toolbar--tight">
+          <h3 class="card__title"><i class="fa-solid fa-image"></i> 學生作品集</h3>
+          <a class="link-more" href="#works">看更多 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="work-grid">
+          <figure class="work" style="--g1:#93c5fd;--g2:#3b82f6">
+            <span class="work__icon"><i class="fa-solid fa-pen-fancy"></i></span>
+            <figcaption><strong>我的小小發明家</strong><span>自然科專題</span></figcaption>
+          </figure>
+          <figure class="work" style="--g1:#fcd34d;--g2:#f59e0b">
+            <span class="work__icon"><i class="fa-solid fa-calculator"></i></span>
+            <figcaption><strong>乘法王大挑戰</strong><span>數學學習單</span></figcaption>
+          </figure>
+          <figure class="work" style="--g1:#a7f3d0;--g2:#10b981">
+            <span class="work__icon"><i class="fa-solid fa-seedling"></i></span>
+            <figcaption><strong>我家的小菜園</strong><span>自然觀察日記</span></figcaption>
+          </figure>
+          <figure class="work" style="--g1:#f9a8d4;--g2:#ec4899">
+            <span class="work__icon"><i class="fa-solid fa-palette"></i></span>
+            <figcaption><strong>彩虹色的班級</strong><span>美術創作</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 聯絡我們 ══════════════ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><i class="fa-solid fa-comments"></i> Contact</p>
+      <h2 class="section__title">聯絡我們</h2>
+      <p class="section__lead">有任何問題都歡迎與導師聯繫，也歡迎到校與我們打招呼。</p>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="contact-card reveal" style="--d:0ms">
+        <span class="contact-card__icon" style="--c:#2563eb;--c-soft:#dbeafe"><i class="fa-solid fa-chalkboard-user"></i></span>
+        <h3>班級導師</h3>
+        <p class="contact-card__name">李美玲 老師</p>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-phone"></i> (02) 2345-6789 轉 231</li>
+          <li><i class="fa-solid fa-envelope"></i> 3a@yu-hua.edu.tw</li>
+          <li><i class="fa-regular fa-clock"></i> 平日 07:50 － 16:30</li>
+        </ul>
+      </div>
+
+      <div class="contact-card reveal" style="--d:80ms">
+        <span class="contact-card__icon" style="--c:#10b981;--c-soft:#d1fae5"><i class="fa-solid fa-school"></i></span>
+        <h3>育華國小</h3>
+        <p class="contact-card__name">校務處</p>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i> 臺北市信義區育華路 100 號</li>
+          <li><i class="fa-solid fa-phone"></i> (02) 2345-6789</li>
+          <li><i class="fa-solid fa-envelope"></i> office@yu-hua.edu.tw</li>
+        </ul>
+      </div>
+
+      <div class="contact-card contact-card--qr reveal" style="--d:160ms">
+        <span class="contact-card__icon" style="--c:#f59e0b;--c-soft:#fef3c7"><i class="fa-solid fa-qrcode"></i></span>
+        <h3>班級 QR Code</h3>
+        <p class="contact-card__name">450 × 450 px</p>
+        <div class="qr-frame qr-frame--sm" id="qrFrameSmall" aria-busy="true">
+          <span class="qr-frame__loading"><i class="fa-solid fa-spinner fa-spin"></i> 產生中…</span>
+        </div>
+        <a class="btn btn--sm btn--soft btn--block" href="#qrcode"><i class="fa-solid fa-arrow-up-right-from-square"></i> 回到上方 QR 區塊</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ 頁尾 ══════════════ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <span class="brand__mark"><i class="fa-solid fa-graduation-cap"></i></span>
+      <div>
+        <strong>育華國小 三年甲班</strong>
+        <p>讓每一次學習，都看得見成長。</p>
+      </div>
+    </div>
+
+    <nav class="footer__nav" aria-label="頁尾選單">
+      <a href="#schedule">本週課表</a>
+      <a href="#news">最新公告</a>
+      <a href="#homework">每日作業</a>
+      <a href="#activity">活動行事</a>
+      <a href="#honor">榮譽榜</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+
+    <p class="footer__copy">
+      © <span id="year">2026</span> 育華國小三年甲班　·　網頁內容由班級導師維護
+    </p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到頂端"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/qrcode.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
